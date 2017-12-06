@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdventOfCode17.Day1;
+using System;
 
 namespace AdventOfCode17.Host
 {
@@ -6,7 +7,10 @@ namespace AdventOfCode17.Host
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var captcha = new Captcha();
+            var sequence = 1221;
+            captcha.ReviewSequence(sequence);
+            Console.WriteLine(captcha.GetSum());
         }
     }
 }
