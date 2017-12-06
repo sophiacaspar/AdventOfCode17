@@ -27,7 +27,7 @@ namespace AdventOfCode17.Day1.Tests
         public void Should_add_two_different_digits_from_a_four_digit_sequence()
         {
             _captcha = new Captcha();
-            int sequence = 1122;
+            var sequence = "1122";
             _captcha.ReviewSequence(sequence);
             int sum = _captcha.GetSum();
             Assert.AreEqual(3, sum);
@@ -37,7 +37,7 @@ namespace AdventOfCode17.Day1.Tests
         public void Should_add_all_four_digits_from_a_four_digit_sequence()
         {
             _captcha = new Captcha();
-            int sequence = 1111;
+            var sequence = "1111";
             _captcha.ReviewSequence(sequence);
             int sum = _captcha.GetSum();
             Assert.AreEqual(4, sum);
@@ -48,7 +48,7 @@ namespace AdventOfCode17.Day1.Tests
         public void Should_not_add_any_digits_from_a_four_digit_sequence()
         {
             _captcha = new Captcha();
-            int sequence = 1234;
+            var sequence = "1234";
             _captcha.ReviewSequence(sequence);
             int sum = _captcha.GetSum();
             Assert.AreEqual(0, sum);
@@ -59,7 +59,7 @@ namespace AdventOfCode17.Day1.Tests
         public void Should_only_add_the_first_and_last_digits_from_a_sequence()
         {
             _captcha = new Captcha();
-            int sequence = 91212129;
+            var sequence = "91212129";
             _captcha.ReviewSequence(sequence);
             int sum = _captcha.GetSum();
             Assert.AreEqual(9, sum);
