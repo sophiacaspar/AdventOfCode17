@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode17.Day1", "AdventOfCode17.Day1\AdventOfCode17.Day1.csproj", "{789A4423-4D12-4C1E-B0B4-22F3AE276AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode17.Host", "AdventOfCode17.Host\AdventOfCode17.Host.csproj", "{E22B63D2-3A70-4D03-A8DC-43D63DEB2AA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode17.Day1.Host", "AdventOfCode17.Host\AdventOfCode17.Day1.Host.csproj", "{E22B63D2-3A70-4D03-A8DC-43D63DEB2AA0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode17.Day1.Tests", "AdventOfCode17.Day1.Tests\AdventOfCode17.Day1.Tests.csproj", "{C4544B4B-5CDB-45A2-A61B-A545979B290E}"
 EndProject
