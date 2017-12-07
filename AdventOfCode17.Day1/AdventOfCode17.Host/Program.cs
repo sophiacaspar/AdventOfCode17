@@ -12,9 +12,8 @@ namespace AdventOfCode17.Host
             var fileReader = new FileReader(pathToFile);
             string sequence = fileReader.GetInputFromFile();
             var captcha = new Captcha();
-            //captcha.ReviewSequence(sequence);
-            captcha.ReviewSequenceHalfLengthAhead(sequence, sequence.Length/2);
-            Console.WriteLine(captcha.GetSum());
+            Console.WriteLine(captcha.GetSumFromCheckingOneDigitAhead(sequence));
+            Console.WriteLine(captcha.GetSumFromCheckingHalfLengthDigitAhead(sequence));
         }
     }
 }

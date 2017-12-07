@@ -28,8 +28,7 @@ namespace AdventOfCode17.Day1.Tests
         {
             _captcha = new Captcha();
             var sequence = "1122";
-            _captcha.ReviewSequence(sequence);
-            int sum = _captcha.GetSum();
+            int sum = _captcha.GetSumFromCheckingOneDigitAhead(sequence);
             Assert.AreEqual(3, sum);
         }
 
@@ -38,8 +37,7 @@ namespace AdventOfCode17.Day1.Tests
         {
             _captcha = new Captcha();
             var sequence = "1111";
-            _captcha.ReviewSequence(sequence);
-            int sum = _captcha.GetSum();
+            int sum = _captcha.GetSumFromCheckingOneDigitAhead(sequence);
             Assert.AreEqual(4, sum);
 
         }
@@ -49,8 +47,7 @@ namespace AdventOfCode17.Day1.Tests
         {
             _captcha = new Captcha();
             var sequence = "1234";
-            _captcha.ReviewSequence(sequence);
-            int sum = _captcha.GetSum();
+            int sum = _captcha.GetSumFromCheckingOneDigitAhead(sequence);
             Assert.AreEqual(0, sum);
 
         }
@@ -60,8 +57,7 @@ namespace AdventOfCode17.Day1.Tests
         {
             _captcha = new Captcha();
             var sequence = "91212129";
-            _captcha.ReviewSequence(sequence);
-            int sum = _captcha.GetSum();
+            int sum = _captcha.GetSumFromCheckingOneDigitAhead(sequence);
             Assert.AreEqual(9, sum);
         }
 
@@ -70,8 +66,7 @@ namespace AdventOfCode17.Day1.Tests
         {
             _captcha = new Captcha();
             var sequence = "1212";
-            _captcha.ReviewSequenceHalfLengthAhead(sequence, sequence.Length/2);
-            int sum = _captcha.GetSum();
+            int sum = _captcha.GetSumFromCheckingHalfLengthDigitAhead(sequence);
             Assert.AreEqual(6, sum);
         }
 
@@ -80,8 +75,7 @@ namespace AdventOfCode17.Day1.Tests
         {
             _captcha = new Captcha();
             var sequence = "1221";
-            _captcha.ReviewSequenceHalfLengthAhead(sequence, sequence.Length / 2);
-            int sum = _captcha.GetSum();
+            int sum = _captcha.GetSumFromCheckingHalfLengthDigitAhead(sequence);
             Assert.AreEqual(0, sum);
         }
 
@@ -90,8 +84,7 @@ namespace AdventOfCode17.Day1.Tests
         {
             _captcha = new Captcha();
             var sequence = "123425";
-            _captcha.ReviewSequenceHalfLengthAhead(sequence, sequence.Length / 2);
-            int sum = _captcha.GetSum();
+            int sum = _captcha.GetSumFromCheckingHalfLengthDigitAhead(sequence);
             Assert.AreEqual(4, sum);
         }
     }

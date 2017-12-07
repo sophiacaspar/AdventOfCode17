@@ -4,10 +4,20 @@ namespace AdventOfCode17.Day1
 {
     public class Captcha
     {
-        private int _sum = 0;
+        private int _sum;
+        private int _startsum = 0;
 
-        public int GetSum()
+        public int GetSumFromCheckingOneDigitAhead(string sequence)
         {
+            _sum = _startsum;
+            ReviewSequence(sequence, 1);
+            return _sum;
+        }
+
+        public int GetSumFromCheckingHalfLengthDigitAhead(string sequence)
+        {
+            _sum = _startsum;
+            ReviewSequence(sequence, sequence.Length/2);
             return _sum;
         }
 
@@ -16,28 +26,7 @@ namespace AdventOfCode17.Day1
             _sum = _sum + (int)Char.GetNumericValue(digit); ;
         }
 
-        public void ReviewSequence(string sequence)
-        {
-            var digits = sequence.ToCharArray();
-
-            for (int i = 0; i < digits.Length; i++)
-            {
-                if (i != (digits.Length - 1) && (digits[i] == digits[i + 1]))
-                {
-                    AddSum(digits[i]);
-                }
-                else if (i == (digits.Length -1) && (digits[i] == digits[0]))
-                {
-                    AddSum(digits[i]);
-                }
-                else
-                {
-                    continue;
-                }
-            }
-        }
-
-        public void ReviewSequenceHalfLengthAhead(string sequence, int indexForward)
+        public void ReviewSequence(string sequence, int indexForward)
         {
             var digits = sequence.ToCharArray();
 
