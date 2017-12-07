@@ -14,7 +14,7 @@ namespace AdventOfCode17.Day2
             _pathToFile = pathToFile;
         }
 
-        public void GetInputFromFile()
+        public List<string> GetInputFromFile()
         {
             _rows = new List<string>(); 
             try
@@ -30,6 +30,7 @@ namespace AdventOfCode17.Day2
             {
                 Console.WriteLine(e);
             }
+            return _rows;
 
         }
     }
