@@ -23,12 +23,6 @@ namespace AdventOfCode17.Day1.Tests
         private Captcha _captcha;
 
 
-        [TestInitialize]
-        public void SetUp()
-        {
-            
-        }
-
         [TestMethod]
         public void Should_add_two_different_digits_from_a_four_digit_sequence()
         {
@@ -69,6 +63,37 @@ namespace AdventOfCode17.Day1.Tests
             _captcha.ReviewSequence(sequence);
             int sum = _captcha.GetSum();
             Assert.AreEqual(9, sum);
+        }
+
+        [TestMethod]
+        public void Should_check_two_digits_ahead_and_add_the_matching_digits()
+        {
+            _captcha = new Captcha();
+            var sequence = "1212";
+            _captcha.ReviewSequenceHalfLengthAhead(sequence, sequence.Length/2);
+            int sum = _captcha.GetSum();
+            Assert.AreEqual(6, sum);
+        }
+
+        [TestMethod]
+        public void Should_check_two_digits_ahead_and_not_add_any_digits()
+        {
+            _captcha = new Captcha();
+            var sequence = "1221";
+            _captcha.ReviewSequenceHalfLengthAhead(sequence, sequence.Length / 2);
+            int sum = _captcha.GetSum();
+            Assert.AreEqual(6, sum);
+        }
+
+        [TestMethod]
+        public void Should_check_three_digits_ahead_and_add_the_matching_digits()
+        {
+            // 123425 produces 4
+            _captcha = new Captcha();
+            var sequence = "123425";
+            _captcha.ReviewSequenceHalfLengthAhead(sequence, sequence.Length / 2);
+            int sum = _captcha.GetSum();
+            Assert.AreEqual(4, sum);
         }
     }
 }

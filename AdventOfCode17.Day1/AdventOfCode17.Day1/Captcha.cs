@@ -26,7 +26,8 @@ namespace AdventOfCode17.Day1
                 {
                     AddSum(digits[i]);
                 }
-                else if (i == (digits.Length -1) && (digits[i] == digits[0])) {
+                else if (i == (digits.Length -1) && (digits[i] == digits[0]))
+                {
                     AddSum(digits[i]);
                 }
                 else
@@ -34,6 +35,12 @@ namespace AdventOfCode17.Day1
                     continue;
                 }
             }
+        }
+
+        public void ReviewSequenceHalfLengthAhead(string sequence, int indexForward)
+        {
+            var digits = sequence.ToCharArray();
+
         }
     }
 }
