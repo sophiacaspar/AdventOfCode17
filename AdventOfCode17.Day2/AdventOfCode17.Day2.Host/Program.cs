@@ -12,7 +12,8 @@ namespace AdventOfCode17.Day2.Host
             var input = fileReader.GetInputFromFile();
 
             var checksum = new Checksum();
-            Console.WriteLine(checksum.CalculateChecksum(input));
+            //Console.WriteLine(checksum.CalculateChecksum(input));
+            Console.WriteLine(checksum.CalculateDivisibleChecksum(input));
         }
     }
 }

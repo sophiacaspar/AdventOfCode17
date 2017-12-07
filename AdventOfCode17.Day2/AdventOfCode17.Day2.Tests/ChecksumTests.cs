@@ -16,17 +16,23 @@ namespace AdventOfCode17.Day2.Tests
     {
         private Checksum _checksum;
         private List<int> _intTestList;
-        private List<string> _stringTestList;
+        private List<string> _checksumTestList;
+        private List<string> _divisibleChecksumTestList;
 
         [TestInitialize]
         public void SetUp()
         {
             _checksum = new Checksum();
             _intTestList = new List<int>(new int[] { 5, 1, 9, 5 });
-            _stringTestList = new List<string>();
-            _stringTestList.Add("5 1 9 5");
-            _stringTestList.Add("7 5 3");
-            _stringTestList.Add("2 4 6 8");
+            _checksumTestList = new List<string>();
+            _checksumTestList.Add("5 1 9 5");
+            _checksumTestList.Add("7 5 3");
+            _checksumTestList.Add("2 4 6 8");
+
+            _divisibleChecksumTestList = new List<string>();
+            _divisibleChecksumTestList.Add("5 9 2 8");
+            _divisibleChecksumTestList.Add("9 4 7 3");
+            _divisibleChecksumTestList.Add("3 8 6 5");
         }
 
 
@@ -54,8 +60,15 @@ namespace AdventOfCode17.Day2.Tests
         [TestMethod]
         public void Should_get_the_checksum_of_all_differences()
         {
-            int checksum = _checksum.CalculateChecksum(_stringTestList);
+            int checksum = _checksum.CalculateChecksum(_checksumTestList);
             Assert.AreEqual(18, checksum);
+        }
+
+        [TestMethod]
+        public void Should_get_the_divisible_checksum()
+        {
+            int divisible = _checksum.CalculateDivisibleChecksum(_divisibleChecksumTestList);
+            Assert.AreEqual(9, divisible);
         }
     }
 }
