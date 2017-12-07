@@ -82,13 +82,12 @@ namespace AdventOfCode17.Day1.Tests
             var sequence = "1221";
             _captcha.ReviewSequenceHalfLengthAhead(sequence, sequence.Length / 2);
             int sum = _captcha.GetSum();
-            Assert.AreEqual(6, sum);
+            Assert.AreEqual(0, sum);
         }
 
         [TestMethod]
         public void Should_check_three_digits_ahead_and_add_the_matching_digits()
         {
-            // 123425 produces 4
             _captcha = new Captcha();
             var sequence = "123425";
             _captcha.ReviewSequenceHalfLengthAhead(sequence, sequence.Length / 2);

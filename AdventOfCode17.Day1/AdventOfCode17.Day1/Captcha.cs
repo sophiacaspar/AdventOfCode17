@@ -41,6 +41,23 @@ namespace AdventOfCode17.Day1
         {
             var digits = sequence.ToCharArray();
 
+            for (int i = 0; i < digits.Length; i++)
+            {
+                if (digits[i] == digits[indexForward])
+                {
+                    AddSum(digits[i]);
+                }
+
+                indexForward++;
+
+                // set indexForward to continue the check in a circular way
+                if (indexForward == digits.Length)
+                {
+                    indexForward = 0;
+                }
+
+            }
+
         }
     }
 }
