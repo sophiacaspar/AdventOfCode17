@@ -4,37 +4,33 @@ namespace AdventOfCode17.Day1
 {
     public class Captcha
     {
-        private int _sum;
-        private int _startsum = 0;
 
         public int GetSumFromCheckingOneDigitAhead(string sequence)
         {
-            _sum = _startsum;
-            ReviewSequence(sequence, 1);
-            return _sum;
+            return ReviewSequence(sequence, 1);
         }
 
         public int GetSumFromCheckingHalfLengthDigitAhead(string sequence)
         {
-            _sum = _startsum;
-            ReviewSequence(sequence, sequence.Length/2);
-            return _sum;
+            return ReviewSequence(sequence, sequence.Length/2);
+           
         }
 
-        private void AddSum(char digit)
+        private int ConvertToInt(char digit)
         {
-            _sum = _sum + (int)Char.GetNumericValue(digit); ;
+            return (int)Char.GetNumericValue(digit);
         }
 
-        public void ReviewSequence(string sequence, int indexForward)
+        private int ReviewSequence(string sequence, int indexForward)
         {
+            int sum = 0;
             var digits = sequence.ToCharArray();
 
             for (int i = 0; i < digits.Length; i++)
             {
                 if (digits[i] == digits[indexForward])
                 {
-                    AddSum(digits[i]);
+                    sum += ConvertToInt(digits[i]);
                 }
 
                 indexForward++;
@@ -46,7 +42,7 @@ namespace AdventOfCode17.Day1
                 }
 
             }
-
+            return sum;
         }
     }
 }
